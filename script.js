@@ -14,7 +14,7 @@ const httpsWarning = document.getElementById('httpsWarning');
 const FRAME_SRC = 'assets/moldura-katia-v3.png?v=20260616zoom';
 const EVENT_PHRASE = 'Celebrando a plenitude da vida com o coração cheio de alegria.';
 const EVENT_NAME = 'Kátia Menezes';
-const EVENT_DATE = '20/6/2026';
+const EVENT_DATE = '20/06/2026';
 
 let currentStream = null;
 let useFrontCamera = true;
