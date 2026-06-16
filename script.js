@@ -68,8 +68,8 @@ async function startCamera() {
       audio: false,
       video: {
         facingMode: useFrontCamera ? 'user' : 'environment',
-        width: { ideal: 720 },
-        height: { ideal: 1280 },
+        width: { ideal: 1080 },
+        height: { ideal: 920 },
         aspectRatio: { ideal: 3 / 4 }
       }
     };
