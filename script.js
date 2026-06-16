@@ -11,7 +11,7 @@ const cameraScreen = document.getElementById('cameraScreen');
 const resultScreen = document.getElementById('resultScreen');
 const httpsWarning = document.getElementById('httpsWarning');
 
-const FRAME_SRC = 'assets/moldura-katia-v3.png?v=20260616final';
+const FRAME_SRC = 'assets/moldura-katia-v3.png?v=20260616zoom';
 const EVENT_PHRASE = 'Celebrando a plenitude da vida com o coração cheio de alegria.';
 const EVENT_NAME = 'Kátia Menezes';
 const EVENT_DATE = '20/6/2026';
@@ -68,8 +68,8 @@ async function startCamera() {
       audio: false,
       video: {
         facingMode: useFrontCamera ? 'user' : 'environment',
-        width: { ideal: 1080 },
-        height: { ideal: 1920 },
+        width: { ideal: 720 },
+        height: { ideal: 1280 },
         aspectRatio: { ideal: 9 / 16 }
       }
     };
@@ -77,6 +77,7 @@ async function startCamera() {
     currentStream = await navigator.mediaDevices.getUserMedia(constraints);
     video.srcObject = currentStream;
     await video.play();
+
     showScreen(cameraScreen);
   } catch (error) {
     console.error(error);
@@ -136,6 +137,7 @@ function roundRect(ctx, x, y, width, height, radius) {
 
 function drawCenteredText(ctx, text, x, y, maxWidth, startSize, fontFamily, color, strokeColor = null) {
   let size = startSize;
+
   ctx.textAlign = 'center';
   ctx.textBaseline = 'middle';
   ctx.font = `900 ${size}px ${fontFamily}`;
@@ -198,14 +200,18 @@ async function capturePhoto() {
   }
 
   const frame = await preloadFrame();
+
   ctx.drawImage(frame, 0, 0, canvas.width, canvas.height);
   drawTextBox(ctx, canvas.width, canvas.height);
 
   canvas.toBlob(blob => {
     lastBlob = blob;
+
     const url = URL.createObjectURL(blob);
+
     resultImage.src = url;
     downloadLink.href = url;
+
     showScreen(resultScreen);
     stopCamera();
   }, 'image/png', 1);
