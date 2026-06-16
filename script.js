@@ -70,7 +70,7 @@ async function startCamera() {
         facingMode: useFrontCamera ? 'user' : 'environment',
         width: { ideal: 720 },
         height: { ideal: 1280 },
-        aspectRatio: { ideal: 9 / 16 }
+        aspectRatio: { ideal: 3 / 4 }
       }
     };
 
