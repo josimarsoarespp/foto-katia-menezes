@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#1f3f2a" />
+  <title>Foto com Moldura - Kátia Menezes</title>
+
+  <link rel="preload" as="image" href="assets/moldura-katia-v3.png?v=20260616final">
+  <link rel="stylesheet" href="style.css?v=20260616final">
+</head>
+<body>
+  <main class="app">
+    <section id="startScreen" class="screen active start-screen">
+      <div class="start-card">
+        <img class="mini-frame" src="assets/moldura-katia-v3.png?v=20260616final" alt="Moldura de girassóis">
+        <h1>Kátia Menezes</h1>
+        <p>Celebrando a plenitude da vida com o coração cheio de alegria.</p>
+        <button id="startCameraBtn" class="primary-btn">Abrir câmera</button>
+        <p id="httpsWarning" class="warning hidden">
+          Para funcionar, abra pelo link HTTPS do GitHub Pages, não pelo arquivo do computador.
+        </p>
+      </div>
+    </section>
+
+    <section id="cameraScreen" class="screen camera-screen">
+      <div class="camera-stage">
+        <video id="video" autoplay playsinline muted></video>
+        <img id="overlayFrame" src="assets/moldura-katia-v3.png?v=20260616final" alt="Moldura de girassóis">
+
+        <div class="text-card live-text">
+          <div class="phrase">Celebrando a plenitude da vida com o coração cheio de alegria.</div>
+          <div class="name">Kátia Menezes</div>
+          <div class="date">20/6/2026</div>
+        </div>
+
+        <button id="switchCameraBtn" class="round-btn switch-btn" type="button" aria-label="Trocar câmera">↺</button>
+        <button id="captureBtn" class="capture-btn" type="button" aria-label="Capturar foto"></button>
+      </div>
+    </section>
+
+    <section id="resultScreen" class="screen result-screen">
+      <img id="resultImage" alt="Foto com moldura pronta">
+      <div class="result-actions">
+        <button id="newPhotoBtn" class="secondary-btn" type="button">Nova foto</button>
+        <a id="downloadLink" class="primary-btn" download="foto-katia-menezes.png">Baixar foto</a>
+        <button id="shareBtn" class="secondary-btn" type="button">Compartilhar</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js?v=20260616final"></script>
+</body>
+</html>
